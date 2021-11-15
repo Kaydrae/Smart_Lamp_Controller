@@ -46,6 +46,19 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Add_Device.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Add_Device.Designer.cs">
+          <DependentUpon>Add_Device.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Devices.cs" />
+        <Compile Include="Device_Interaction.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Device_Interaction.Designer.cs">
+          <DependentUpon>Device_Interaction.cs</DependentUpon>
+        </Compile>
         <Compile Include="Form1.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -78,6 +91,9 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="log.txt" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

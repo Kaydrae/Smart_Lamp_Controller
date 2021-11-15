@@ -1,0 +1,4 @@
+﻿11/14/2021
+Creating the UI and basic functionality of the app along with some test data. Should take about 2-3 hours.
+The time it has taken was about the 2.5 hours. This is because even though the UI elements are drag and drop I did not remember how to interact with them so 
+I had to do some research to learn how to do it. 
