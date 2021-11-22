@@ -52,6 +52,12 @@
         <Compile Include="Add_Device.Designer.cs">
           <DependentUpon>Add_Device.cs</DependentUpon>
         </Compile>
+        <Compile Include="Add_Device_2.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Add_Device_2.Designer.cs">
+          <DependentUpon>Add_Device_2.cs</DependentUpon>
+        </Compile>
         <Compile Include="Devices.cs" />
         <Compile Include="Device_Interaction.cs">
           <SubType>Form</SubType>
@@ -67,6 +73,15 @@
         </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <EmbeddedResource Include="Add_Device.resx">
+          <DependentUpon>Add_Device.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Add_Device_2.resx">
+          <DependentUpon>Add_Device_2.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Device_Interaction.resx">
+          <DependentUpon>Device_Interaction.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Form1.resx">
           <DependentUpon>Form1.cs</DependentUpon>
         </EmbeddedResource>

@@ -43,6 +43,8 @@ namespace Smart_Lamp_Controller
         {
             string text = listofDevices.GetItemText(listofDevices.SelectedItem);
             MessageBox.Show(text);
+            Device_Interaction d1 = new Device_Interaction();
+            d1.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)
