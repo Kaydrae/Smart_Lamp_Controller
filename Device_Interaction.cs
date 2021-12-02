@@ -5,6 +5,9 @@ namespace Smart_Lamp_Controller
 {
     public partial class Device_Interaction : Form
     {
+        private Button restart;
+        private Button tempature;
+
         public Device_Interaction()
         {
             InitializeComponent();

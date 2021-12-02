@@ -40,7 +40,7 @@ namespace Smart_Lamp_Controller
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ScanTime = new System.Windows.Forms.ComboBox();
             this.bleDeviceConnect = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.bleTxt = new System.Windows.Forms.Label();
             this.bleDeviceList = new System.Windows.Forms.ListBox();
             this.bluetooth_Search_progress = new System.Windows.Forms.ProgressBar();
             this.bleScan = new System.Windows.Forms.Button();
@@ -108,7 +108,7 @@ namespace Smart_Lamp_Controller
             // 
             this.groupBox2.Controls.Add(this.ScanTime);
             this.groupBox2.Controls.Add(this.bleDeviceConnect);
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.bleTxt);
             this.groupBox2.Controls.Add(this.bleDeviceList);
             this.groupBox2.Controls.Add(this.bluetooth_Search_progress);
             this.groupBox2.Controls.Add(this.bleScan);
@@ -138,14 +138,15 @@ namespace Smart_Lamp_Controller
             this.bleDeviceConnect.UseVisualStyleBackColor = true;
             this.bleDeviceConnect.Click += new System.EventHandler(this.bleDeviceConnect_Click);
             // 
-            // label4
+            // bleTxt
             // 
-            this.label4.Location = new System.Drawing.Point(6, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(366, 23);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Lets set up your device over bluetooth!";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bleTxt.Location = new System.Drawing.Point(6, 34);
+            this.bleTxt.Name = "bleTxt";
+            this.bleTxt.Size = new System.Drawing.Size(366, 23);
+            this.bleTxt.TabIndex = 31;
+            this.bleTxt.Text = "Lets set up your device over bluetooth!";
+            this.bleTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bleTxt.Click += new System.EventHandler(this.bleTxt_Click);
             // 
             // bleDeviceList
             // 
@@ -170,6 +171,7 @@ namespace Smart_Lamp_Controller
             this.bleScan.TabIndex = 28;
             this.bleScan.Text = "Scan";
             this.bleScan.UseVisualStyleBackColor = true;
+            this.bleScan.Click += new System.EventHandler(this.bleScan_Click);
             // 
             // label1
             // 
@@ -197,6 +199,8 @@ namespace Smart_Lamp_Controller
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label bleTxt;
 
         private System.Windows.Forms.ComboBox ScanTime;
 

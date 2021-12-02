@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace Smart_Lamp_Controller
         public Form1()
         {
             InitializeComponent();
+            //listofDevices.Columns.Add("jj", 50);
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,12 +51,32 @@ namespace Smart_Lamp_Controller
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection("Server=KEONDRAE8AA2\\SQLEXPRESS; Database=smart_lamp; Integrated Security=True;");
+            con.Open();
+            DataSet ds = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT ID, IP, Name FROM Devices", con);
+            adapter.Fill(ds);
+            //MessageBox.Show(ds.Tables[0].ToString());
             listofDevices.Items.Clear();
-            string[] IPs = {"192.168.0.106", "192.168.0.107", "192.168.0.108", "192.168.0.109", "192.168.0.110", "192.168.0.111", "192.168.0.112","192.168.0.113"};
-            for (int i = 0; i < IPs.Length; i++)
-            {
-                listofDevices.Items.Add(IPs[i].ToString());
-            }
+            this.listofDevices.DataSource = ds.Tables[0]; 
+            this.listofDevices.DisplayMember = "Name"; 
+            
+        }
+
+        private void dBConnectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //KEONDRAE8AA2\SQLEXPRESS
+            
+            SqlConnection con = new SqlConnection("Server=KEONDRAE8AA2\\SQLEXPRESS; Database=smart_lamp; Integrated Security=True;");
+            con.Open();
+            SqlCommand cmd;
+            Console.WriteLine(con.ToString());
+            MessageBox.Show(con.ToString());
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

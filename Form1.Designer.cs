@@ -35,6 +35,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dBConnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addingDeviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removingDeviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,8 +74,11 @@
             // 
             // listofDevices
             // 
+            this.listofDevices.ColumnWidth = 5;
+            this.listofDevices.DisplayMember = "ID, IP, Name";
             this.listofDevices.FormattingEnabled = true;
             this.listofDevices.Location = new System.Drawing.Point(12, 55);
+            this.listofDevices.MultiColumn = true;
             this.listofDevices.Name = "listofDevices";
             this.listofDevices.Size = new System.Drawing.Size(259, 95);
             this.listofDevices.TabIndex = 2;
@@ -90,7 +94,7 @@
             // 
             // applicationToolStripMenuItem
             // 
-            this.applicationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.exitToolStripMenuItem});
+            this.applicationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.exitToolStripMenuItem, this.dBConnectToolStripMenuItem});
             this.applicationToolStripMenuItem.Name = "applicationToolStripMenuItem";
             this.applicationToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.applicationToolStripMenuItem.Text = "Application";
@@ -98,8 +102,15 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // dBConnectToolStripMenuItem
+            // 
+            this.dBConnectToolStripMenuItem.Name = "dBConnectToolStripMenuItem";
+            this.dBConnectToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.dBConnectToolStripMenuItem.Text = "DB_Connect";
+            this.dBConnectToolStripMenuItem.Click += new System.EventHandler(this.dBConnectToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -212,6 +223,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem dBConnectToolStripMenuItem;
 
         private System.Windows.Forms.ListBox listofDevices;
 

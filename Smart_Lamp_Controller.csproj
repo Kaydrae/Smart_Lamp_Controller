@@ -12,6 +12,7 @@
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <Deterministic>true</Deterministic>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +34,10 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="InTheHand.Net.Bluetooth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=ea38caa273134499">
+          <HintPath>packages\InTheHand.Net.Bluetooth.4.0.22\lib\net461\InTheHand.Net.Bluetooth.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Xml.Linq" />
@@ -58,6 +63,7 @@
         <Compile Include="Add_Device_2.Designer.cs">
           <DependentUpon>Add_Device_2.cs</DependentUpon>
         </Compile>
+        <Compile Include="Database.cs" />
         <Compile Include="Devices.cs" />
         <Compile Include="Device_Interaction.cs">
           <SubType>Form</SubType>
@@ -94,6 +100,7 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+        <None Include="packages.config" />
         <None Include="Properties\Settings.settings">
             <Generator>SettingsSingleFileGenerator</Generator>
             <LastGenOutput>Settings.Designer.cs</LastGenOutput>
