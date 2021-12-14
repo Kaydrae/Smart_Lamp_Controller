@@ -45,6 +45,7 @@ namespace Smart_Lamp_Controller
             this.bluetooth_Search_progress = new System.Windows.Forms.ProgressBar();
             this.bleScan = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,8 @@ namespace Smart_Lamp_Controller
             this.groupBox1.Controls.Add(this.known_Ipadress_Textbox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 128);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(379, 237);
@@ -81,23 +84,28 @@ namespace Smart_Lamp_Controller
             // 
             // IP_Known_Connnect_Btn
             // 
-            this.IP_Known_Connnect_Btn.Location = new System.Drawing.Point(123, 124);
+            this.IP_Known_Connnect_Btn.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
+            this.IP_Known_Connnect_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.IP_Known_Connnect_Btn.ForeColor = System.Drawing.Color.White;
+            this.IP_Known_Connnect_Btn.Location = new System.Drawing.Point(6, 141);
             this.IP_Known_Connnect_Btn.Name = "IP_Known_Connnect_Btn";
-            this.IP_Known_Connnect_Btn.Size = new System.Drawing.Size(118, 50);
+            this.IP_Known_Connnect_Btn.Padding = new System.Windows.Forms.Padding(1);
+            this.IP_Known_Connnect_Btn.Size = new System.Drawing.Size(367, 50);
             this.IP_Known_Connnect_Btn.TabIndex = 27;
             this.IP_Known_Connnect_Btn.Text = "Connect!";
-            this.IP_Known_Connnect_Btn.UseVisualStyleBackColor = true;
+            this.IP_Known_Connnect_Btn.UseVisualStyleBackColor = false;
+            this.IP_Known_Connnect_Btn.Click += new System.EventHandler(this.IP_Known_Connnect_Btn_Click);
             // 
             // known_Ipadress_Textbox
             // 
             this.known_Ipadress_Textbox.Location = new System.Drawing.Point(80, 78);
             this.known_Ipadress_Textbox.Name = "known_Ipadress_Textbox";
-            this.known_Ipadress_Textbox.Size = new System.Drawing.Size(216, 20);
+            this.known_Ipadress_Textbox.Size = new System.Drawing.Size(216, 26);
             this.known_Ipadress_Textbox.TabIndex = 26;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(6, 38);
+            this.label2.Location = new System.Drawing.Point(6, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(367, 23);
             this.label2.TabIndex = 25;
@@ -112,6 +120,8 @@ namespace Smart_Lamp_Controller
             this.groupBox2.Controls.Add(this.bleDeviceList);
             this.groupBox2.Controls.Add(this.bluetooth_Search_progress);
             this.groupBox2.Controls.Add(this.bleScan);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(410, 128);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(378, 237);
@@ -125,17 +135,20 @@ namespace Smart_Lamp_Controller
             this.ScanTime.Items.AddRange(new object[] {"01 Sec", "02 Sec", "05 Sec", "10 Sec", "15 Sec", "30 Sec"});
             this.ScanTime.Location = new System.Drawing.Point(128, 170);
             this.ScanTime.Name = "ScanTime";
-            this.ScanTime.Size = new System.Drawing.Size(121, 21);
+            this.ScanTime.Size = new System.Drawing.Size(121, 28);
             this.ScanTime.TabIndex = 33;
             // 
             // bleDeviceConnect
             // 
+            this.bleDeviceConnect.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
+            this.bleDeviceConnect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bleDeviceConnect.Location = new System.Drawing.Point(264, 161);
             this.bleDeviceConnect.Name = "bleDeviceConnect";
+            this.bleDeviceConnect.Padding = new System.Windows.Forms.Padding(1);
             this.bleDeviceConnect.Size = new System.Drawing.Size(108, 37);
             this.bleDeviceConnect.TabIndex = 32;
             this.bleDeviceConnect.Text = "Connect";
-            this.bleDeviceConnect.UseVisualStyleBackColor = true;
+            this.bleDeviceConnect.UseVisualStyleBackColor = false;
             this.bleDeviceConnect.Click += new System.EventHandler(this.bleDeviceConnect_Click);
             // 
             // bleTxt
@@ -151,9 +164,10 @@ namespace Smart_Lamp_Controller
             // bleDeviceList
             // 
             this.bleDeviceList.FormattingEnabled = true;
+            this.bleDeviceList.ItemHeight = 20;
             this.bleDeviceList.Location = new System.Drawing.Point(6, 60);
             this.bleDeviceList.Name = "bleDeviceList";
-            this.bleDeviceList.Size = new System.Drawing.Size(366, 95);
+            this.bleDeviceList.Size = new System.Drawing.Size(366, 84);
             this.bleDeviceList.TabIndex = 30;
             // 
             // bluetooth_Search_progress
@@ -165,31 +179,51 @@ namespace Smart_Lamp_Controller
             // 
             // bleScan
             // 
+            this.bleScan.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.bleScan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bleScan.Location = new System.Drawing.Point(6, 161);
             this.bleScan.Name = "bleScan";
+            this.bleScan.Padding = new System.Windows.Forms.Padding(1);
             this.bleScan.Size = new System.Drawing.Size(108, 37);
             this.bleScan.TabIndex = 28;
             this.bleScan.Text = "Scan";
-            this.bleScan.UseVisualStyleBackColor = true;
+            this.bleScan.UseVisualStyleBackColor = false;
             this.bleScan.Click += new System.EventHandler(this.bleScan_Click);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(144, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(515, 83);
             this.label1.TabIndex = 27;
             this.label1.Text = "Add New Device";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(768, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(20, 20);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Add_Device
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(800, 379);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Add_Device";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Device";

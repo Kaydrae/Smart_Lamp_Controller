@@ -4,15 +4,17 @@ namespace Smart_Lamp_Controller
 {
     public class Devices
     {
-        private string IP = "";
-        private string Name = "";
-        private string Type = "";
+        private int _id;
+        private string _ip;
+        private string _name;
+        private string _type;
 
-        protected Devices(string IP, string Name, string Type)
+        public Devices(int id, string ip, string name, string type)
         {
-            this.IP = IP;
-            this.Name = Name;
-            this.Type = Type;
+            this._id = id;
+            this._ip = ip;
+            this._name = name;
+            this._type = type;
 
         }
 
@@ -22,5 +24,11 @@ namespace Smart_Lamp_Controller
         }
 
 
+        public string Ip
+        {
+            get { return _ip; }
+            set { _ip = value; }
+
+        }
     }
 }

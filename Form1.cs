@@ -16,23 +16,7 @@ namespace Smart_Lamp_Controller
         public Form1()
         {
             InitializeComponent();
-            //listofDevices.Columns.Add("jj", 50);
-        }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-            //throw new System.NotImplementedException();
-        }
-
-        private void getDeviceInfoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           // throw new System.NotImplementedException();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            //throw new System.NotImplementedException();
         }
 
         private void Add_Device_Btn_Click(object sender, EventArgs e)
@@ -41,42 +25,43 @@ namespace Smart_Lamp_Controller
             f2.ShowDialog(); 
         }
 
-        private void Connect_To_Device_btn_Click(object sender, EventArgs e)
-        {
-            string text = listofDevices.GetItemText(listofDevices.SelectedItem);
-            MessageBox.Show(text);
-            Device_Interaction d1 = new Device_Interaction();
-            d1.ShowDialog();
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection("Server=KEONDRAE8AA2\\SQLEXPRESS; Database=smart_lamp; Integrated Security=True;");
             con.Open();
-            DataSet ds = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT ID, IP, Name FROM Devices", con);
+            DataTable ds = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT ID, IP, Name, Type FROM Devices", con);
             adapter.Fill(ds);
-            //MessageBox.Show(ds.Tables[0].ToString());
-            listofDevices.Items.Clear();
-            this.listofDevices.DataSource = ds.Tables[0]; 
-            this.listofDevices.DisplayMember = "Name"; 
-            
+            foreach (DataRow row in ds.Rows)
+            {
+                ListViewItem item = new ListViewItem(row["Name"].ToString());
+                item.SubItems.Add(row["ID"].ToString());
+                item.SubItems.Add(row["IP"].ToString());
+                item.SubItems.Add(row["Type"].ToString());
+                listofDevices.Items.Add(item);
+            }
+
+            listofDevices.View = View.List;
         }
 
-        private void dBConnectToolStripMenuItem_Click(object sender, EventArgs e)
+        private void listofDevices_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //KEONDRAE8AA2\SQLEXPRESS
-            
-            SqlConnection con = new SqlConnection("Server=KEONDRAE8AA2\\SQLEXPRESS; Database=smart_lamp; Integrated Security=True;");
-            con.Open();
-            SqlCommand cmd;
-            Console.WriteLine(con.ToString());
-            MessageBox.Show(con.ToString());
+            if (listofDevices.SelectedItems.Count > 0)
+            {
+                string message = "Name: " + listofDevices.SelectedItems[0].Text + Environment.NewLine;
+                message += "ID: " + listofDevices.SelectedItems[0].SubItems[1].Text + Environment.NewLine;
+                message += "IP: " + listofDevices.SelectedItems[0].SubItems[2].Text + Environment.NewLine;
+                //MessageBox.Show(message);
+                Devices device = new Devices(Convert.ToInt32(listofDevices.SelectedItems[0].SubItems[1].Text), listofDevices.SelectedItems[0].SubItems[2].Text, listofDevices.SelectedItems[0].SubItems[0].Text, listofDevices.SelectedItems[0].SubItems[3].Text);
+                Device_Interaction di = new Device_Interaction(device);
+                di.Show();
+            }
         }
+        
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            Application.Exit();
         }
     }
 }

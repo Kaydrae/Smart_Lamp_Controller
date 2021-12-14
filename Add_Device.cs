@@ -11,7 +11,7 @@ namespace Smart_Lamp_Controller
     public partial class Add_Device : Form
     {
         private ProgressBar Connecting_to_known_ip_progress;
-        private TextBox known_Ipadress_Textbox;
+        private System.Windows.Forms.TextBox known_Ipadress_Textbox;
         private System.Windows.Forms.ListBox bleDeviceList;
         private ProgressBar bluetooth_Search_progress;
         private System.Windows.Forms.Button bleScan;
@@ -84,6 +84,19 @@ namespace Smart_Lamp_Controller
         private void bleTxt_Click(object sender, EventArgs e)
         {
             //throw new System.NotImplementedException();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void IP_Known_Connnect_Btn_Click(object sender, EventArgs e)
+        {
+            string ipAddress = known_Ipadress_Textbox.Text;
+            //MessageBox.Show(ipAddress);
+            
+            
         }
     }
 }
