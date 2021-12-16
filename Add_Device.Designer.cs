@@ -38,10 +38,9 @@ namespace Smart_Lamp_Controller
             this.known_Ipadress_Textbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ScanTime = new System.Windows.Forms.ComboBox();
-            this.bleDeviceConnect = new System.Windows.Forms.Button();
-            this.bleTxt = new System.Windows.Forms.Label();
             this.bleDeviceList = new System.Windows.Forms.ListBox();
+            this.bleTxt = new System.Windows.Forms.Label();
+            this.bleDeviceConnect = new System.Windows.Forms.Button();
             this.bluetooth_Search_progress = new System.Windows.Forms.ProgressBar();
             this.bleScan = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -114,10 +113,9 @@ namespace Smart_Lamp_Controller
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.ScanTime);
-            this.groupBox2.Controls.Add(this.bleDeviceConnect);
-            this.groupBox2.Controls.Add(this.bleTxt);
             this.groupBox2.Controls.Add(this.bleDeviceList);
+            this.groupBox2.Controls.Add(this.bleTxt);
+            this.groupBox2.Controls.Add(this.bleDeviceConnect);
             this.groupBox2.Controls.Add(this.bluetooth_Search_progress);
             this.groupBox2.Controls.Add(this.bleScan);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
@@ -129,46 +127,35 @@ namespace Smart_Lamp_Controller
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bluetooth ";
             // 
-            // ScanTime
+            // bleDeviceList
             // 
-            this.ScanTime.FormattingEnabled = true;
-            this.ScanTime.Items.AddRange(new object[] {"01 Sec", "02 Sec", "05 Sec", "10 Sec", "15 Sec", "30 Sec"});
-            this.ScanTime.Location = new System.Drawing.Point(128, 170);
-            this.ScanTime.Name = "ScanTime";
-            this.ScanTime.Size = new System.Drawing.Size(121, 28);
-            this.ScanTime.TabIndex = 33;
+            this.bleDeviceList.FormattingEnabled = true;
+            this.bleDeviceList.ItemHeight = 20;
+            this.bleDeviceList.Location = new System.Drawing.Point(6, 48);
+            this.bleDeviceList.Name = "bleDeviceList";
+            this.bleDeviceList.Size = new System.Drawing.Size(366, 104);
+            this.bleDeviceList.TabIndex = 34;
+            // 
+            // bleTxt
+            // 
+            this.bleTxt.Location = new System.Drawing.Point(6, 22);
+            this.bleTxt.Name = "bleTxt";
+            this.bleTxt.Size = new System.Drawing.Size(367, 23);
+            this.bleTxt.TabIndex = 33;
+            this.bleTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bleDeviceConnect
             // 
             this.bleDeviceConnect.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
             this.bleDeviceConnect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bleDeviceConnect.Location = new System.Drawing.Point(264, 161);
+            this.bleDeviceConnect.Location = new System.Drawing.Point(193, 161);
             this.bleDeviceConnect.Name = "bleDeviceConnect";
             this.bleDeviceConnect.Padding = new System.Windows.Forms.Padding(1);
-            this.bleDeviceConnect.Size = new System.Drawing.Size(108, 37);
+            this.bleDeviceConnect.Size = new System.Drawing.Size(180, 37);
             this.bleDeviceConnect.TabIndex = 32;
             this.bleDeviceConnect.Text = "Connect";
             this.bleDeviceConnect.UseVisualStyleBackColor = false;
             this.bleDeviceConnect.Click += new System.EventHandler(this.bleDeviceConnect_Click);
-            // 
-            // bleTxt
-            // 
-            this.bleTxt.Location = new System.Drawing.Point(6, 34);
-            this.bleTxt.Name = "bleTxt";
-            this.bleTxt.Size = new System.Drawing.Size(366, 23);
-            this.bleTxt.TabIndex = 31;
-            this.bleTxt.Text = "Lets set up your device over bluetooth!";
-            this.bleTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bleTxt.Click += new System.EventHandler(this.bleTxt_Click);
-            // 
-            // bleDeviceList
-            // 
-            this.bleDeviceList.FormattingEnabled = true;
-            this.bleDeviceList.ItemHeight = 20;
-            this.bleDeviceList.Location = new System.Drawing.Point(6, 60);
-            this.bleDeviceList.Name = "bleDeviceList";
-            this.bleDeviceList.Size = new System.Drawing.Size(366, 84);
-            this.bleDeviceList.TabIndex = 30;
             // 
             // bluetooth_Search_progress
             // 
@@ -184,7 +171,7 @@ namespace Smart_Lamp_Controller
             this.bleScan.Location = new System.Drawing.Point(6, 161);
             this.bleScan.Name = "bleScan";
             this.bleScan.Padding = new System.Windows.Forms.Padding(1);
-            this.bleScan.Size = new System.Drawing.Size(108, 37);
+            this.bleScan.Size = new System.Drawing.Size(180, 37);
             this.bleScan.TabIndex = 28;
             this.bleScan.Text = "Scan";
             this.bleScan.UseVisualStyleBackColor = false;
@@ -234,9 +221,9 @@ namespace Smart_Lamp_Controller
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Label bleTxt;
+        private System.Windows.Forms.ListBox dd;
 
-        private System.Windows.Forms.ComboBox ScanTime;
+        private System.Windows.Forms.Label bleTxt;
 
         private System.Windows.Forms.Button IP_Known_Connnect_Btn;
 
