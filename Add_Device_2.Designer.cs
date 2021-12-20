@@ -34,11 +34,11 @@ namespace Smart_Lamp_Controller
             this.passTwo = new System.Windows.Forms.TextBox();
             this.ssidtwo = new System.Windows.Forms.TextBox();
             this.passOne = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.pass_two_lbl = new System.Windows.Forms.Label();
+            this.SSID_two_lbl = new System.Windows.Forms.Label();
+            this.pass_one_lbl = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label4 = new System.Windows.Forms.Label();
+            this.SSID_One_lbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ssidOne = new System.Windows.Forms.TextBox();
@@ -51,79 +51,88 @@ namespace Smart_Lamp_Controller
             // 
             // passTwo
             // 
-            this.passTwo.Location = new System.Drawing.Point(186, 268);
+            this.passTwo.Location = new System.Drawing.Point(248, 330);
+            this.passTwo.Margin = new System.Windows.Forms.Padding(4);
             this.passTwo.Name = "passTwo";
-            this.passTwo.Size = new System.Drawing.Size(121, 20);
+            this.passTwo.Size = new System.Drawing.Size(160, 22);
             this.passTwo.TabIndex = 34;
             // 
             // ssidtwo
             // 
-            this.ssidtwo.Location = new System.Drawing.Point(186, 242);
+            this.ssidtwo.Location = new System.Drawing.Point(248, 298);
+            this.ssidtwo.Margin = new System.Windows.Forms.Padding(4);
             this.ssidtwo.Name = "ssidtwo";
-            this.ssidtwo.Size = new System.Drawing.Size(121, 20);
+            this.ssidtwo.Size = new System.Drawing.Size(160, 22);
             this.ssidtwo.TabIndex = 33;
             // 
             // passOne
             // 
-            this.passOne.Location = new System.Drawing.Point(186, 199);
+            this.passOne.Location = new System.Drawing.Point(248, 245);
+            this.passOne.Margin = new System.Windows.Forms.Padding(4);
             this.passOne.Name = "passOne";
-            this.passOne.Size = new System.Drawing.Size(121, 20);
+            this.passOne.Size = new System.Drawing.Size(160, 22);
             this.passOne.TabIndex = 32;
             // 
-            // label7
+            // pass_two_lbl
             // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(22, 266);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 21);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Password Two";
+            this.pass_two_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.pass_two_lbl.ForeColor = System.Drawing.Color.White;
+            this.pass_two_lbl.Location = new System.Drawing.Point(29, 327);
+            this.pass_two_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pass_two_lbl.Name = "pass_two_lbl";
+            this.pass_two_lbl.Size = new System.Drawing.Size(153, 26);
+            this.pass_two_lbl.TabIndex = 30;
+            this.pass_two_lbl.Text = "Password Two";
             // 
-            // label6
+            // SSID_two_lbl
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(22, 241);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 21);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "SSID Two";
+            this.SSID_two_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.SSID_two_lbl.ForeColor = System.Drawing.Color.White;
+            this.SSID_two_lbl.Location = new System.Drawing.Point(29, 297);
+            this.SSID_two_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SSID_two_lbl.Name = "SSID_two_lbl";
+            this.SSID_two_lbl.Size = new System.Drawing.Size(133, 26);
+            this.SSID_two_lbl.TabIndex = 29;
+            this.SSID_two_lbl.Text = "SSID Two";
             // 
-            // label5
+            // pass_one_lbl
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(22, 198);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 21);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Password One";
+            this.pass_one_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.pass_one_lbl.ForeColor = System.Drawing.Color.White;
+            this.pass_one_lbl.Location = new System.Drawing.Point(29, 244);
+            this.pass_one_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pass_one_lbl.Name = "pass_one_lbl";
+            this.pass_one_lbl.Size = new System.Drawing.Size(164, 26);
+            this.pass_one_lbl.TabIndex = 28;
+            this.pass_one_lbl.Text = "Password One";
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 373);
+            this.progressBar1.Location = new System.Drawing.Point(16, 459);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(372, 40);
+            this.progressBar1.Size = new System.Drawing.Size(496, 49);
             this.progressBar1.TabIndex = 27;
             // 
-            // label4
+            // SSID_One_lbl
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(22, 175);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 21);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "SSID One";
+            this.SSID_One_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.SSID_One_lbl.ForeColor = System.Drawing.Color.White;
+            this.SSID_One_lbl.Location = new System.Drawing.Point(29, 215);
+            this.SSID_One_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SSID_One_lbl.Name = "SSID_One_lbl";
+            this.SSID_One_lbl.Size = new System.Drawing.Size(119, 26);
+            this.SSID_One_lbl.TabIndex = 25;
+            this.SSID_One_lbl.Text = "SSID One";
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(13, 32);
+            this.label3.Location = new System.Drawing.Point(17, 39);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(381, 56);
+            this.label3.Size = new System.Drawing.Size(508, 69);
             this.label3.TabIndex = 23;
             this.label3.Text = "Add New Device";
             // 
@@ -131,59 +140,66 @@ namespace Smart_Lamp_Controller
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(23, 127);
+            this.label2.Location = new System.Drawing.Point(31, 156);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 21);
+            this.label2.Size = new System.Drawing.Size(133, 26);
             this.label2.TabIndex = 22;
             this.label2.Text = "Device Type";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ssidOne
             // 
-            this.ssidOne.Location = new System.Drawing.Point(186, 173);
+            this.ssidOne.Location = new System.Drawing.Point(248, 213);
+            this.ssidOne.Margin = new System.Windows.Forms.Padding(4);
             this.ssidOne.Name = "ssidOne";
-            this.ssidOne.Size = new System.Drawing.Size(121, 20);
+            this.ssidOne.Size = new System.Drawing.Size(160, 22);
             this.ssidOne.TabIndex = 21;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 95);
+            this.label1.Location = new System.Drawing.Point(17, 117);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 21);
+            this.label1.Size = new System.Drawing.Size(165, 26);
             this.label1.TabIndex = 20;
             this.label1.Text = "Device Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // newDeviceName
             // 
-            this.newDeviceName.Location = new System.Drawing.Point(187, 96);
+            this.newDeviceName.Location = new System.Drawing.Point(249, 118);
+            this.newDeviceName.Margin = new System.Windows.Forms.Padding(4);
             this.newDeviceName.Name = "newDeviceName";
-            this.newDeviceName.Size = new System.Drawing.Size(121, 20);
+            this.newDeviceName.Size = new System.Drawing.Size(160, 22);
             this.newDeviceName.TabIndex = 19;
             // 
             // connectToDevice
             // 
             this.connectToDevice.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
             this.connectToDevice.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.connectToDevice.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.connectToDevice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.connectToDevice.ForeColor = System.Drawing.Color.White;
-            this.connectToDevice.Location = new System.Drawing.Point(23, 313);
+            this.connectToDevice.Location = new System.Drawing.Point(31, 385);
+            this.connectToDevice.Margin = new System.Windows.Forms.Padding(4);
             this.connectToDevice.Name = "connectToDevice";
             this.connectToDevice.Padding = new System.Windows.Forms.Padding(1);
-            this.connectToDevice.Size = new System.Drawing.Size(330, 54);
+            this.connectToDevice.Size = new System.Drawing.Size(440, 66);
             this.connectToDevice.TabIndex = 18;
-            this.connectToDevice.Text = "Connect!";
+            this.connectToDevice.Text = "Add Device";
             this.connectToDevice.UseVisualStyleBackColor = false;
+            this.connectToDevice.Click += new System.EventHandler(this.connectToDevice_Click);
             // 
             // listDeviceType
             // 
             this.listDeviceType.FormattingEnabled = true;
             this.listDeviceType.Items.AddRange(new object[] {"Smart Lamp", "Smart Lock"});
-            this.listDeviceType.Location = new System.Drawing.Point(187, 128);
+            this.listDeviceType.Location = new System.Drawing.Point(249, 158);
+            this.listDeviceType.Margin = new System.Windows.Forms.Padding(4);
             this.listDeviceType.Name = "listDeviceType";
-            this.listDeviceType.Size = new System.Drawing.Size(121, 21);
+            this.listDeviceType.Size = new System.Drawing.Size(160, 24);
             this.listDeviceType.TabIndex = 35;
             // 
             // button1
@@ -191,9 +207,10 @@ namespace Smart_Lamp_Controller
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(364, 9);
+            this.button1.Location = new System.Drawing.Point(485, 11);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 20);
+            this.button1.Size = new System.Drawing.Size(27, 25);
             this.button1.TabIndex = 36;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = false;
@@ -201,20 +218,20 @@ namespace Smart_Lamp_Controller
             // 
             // Add_Device_2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(396, 427);
+            this.ClientSize = new System.Drawing.Size(528, 526);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listDeviceType);
             this.Controls.Add(this.passTwo);
             this.Controls.Add(this.ssidtwo);
             this.Controls.Add(this.passOne);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pass_two_lbl);
+            this.Controls.Add(this.SSID_two_lbl);
+            this.Controls.Add(this.pass_one_lbl);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.SSID_One_lbl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ssidOne);
@@ -222,21 +239,26 @@ namespace Smart_Lamp_Controller
             this.Controls.Add(this.newDeviceName);
             this.Controls.Add(this.connectToDevice);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Add_Device_2";
             this.Text = "Add_Device_2";
+            this.Load += new System.EventHandler(this.Add_Device_2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label SSID_One_lbl;
 
         private System.Windows.Forms.ComboBox listDeviceType;
 
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox3;
+        
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label pass_two_lbl;
+        private System.Windows.Forms.Label SSID_two_lbl;
+        private System.Windows.Forms.Label pass_one_lbl;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Smart_Lamp_Controller.Database;
 
 namespace Smart_Lamp_Controller
 {
@@ -21,17 +23,59 @@ namespace Smart_Lamp_Controller
         {
             InitializeComponent();
             this.ipAddress = ipAddress;
+            //MessageBox.Show(ipAddress);
         }
-
-        public ComboBox DeviceTypeList { get; set; }
-
-        public void Add_Device_2_load(object sender, EventArgs e){
-            
-        }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
-           this.Close();
+           Close();
+        }
+
+        private void Add_Device_2_Load(object sender, EventArgs e)
+        {
+            if (ipAddress != "")
+            {
+                SSID_One_lbl.Hide();
+                ssidOne.Hide();
+                SSID_two_lbl.Hide();
+                ssidtwo.Hide();
+                pass_one_lbl.Hide();
+                pass_two_lbl.Hide();
+                passOne.Hide();
+                passTwo.Hide();
+            }
+        }
+
+        private async void connectToDevice_Click(object sender, EventArgs e)
+        {
+            string deviceType = listDeviceType.SelectedItem.ToString();
+            string deviceName = newDeviceName.Text;
+
+            Devices d = new Devices(ipAddress, deviceName, deviceType);
+
+            if (deviceName.Equals(""))
+            {
+                MessageBox.Show("Device name must not be empty!");
+            }
+            else
+            {
+                 if (Insert(d, "Devices") < 0)
+                 {
+                     MessageBox.Show("Error inserting data into Database!"); 
+                 }
+                 else
+                 {
+                     MessageBox.Show("Device Added Sucessfuly.");
+                     //Form1 home = new Form1();
+                     //Application.OpenForms["Form1"].Dispose();
+                     Application.OpenForms["Add_Device"].Close();
+                     //home.Show();
+                     Close();
+                 }
+            }
+           
+           
+
         }
     }
     

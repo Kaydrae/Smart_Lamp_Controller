@@ -27,21 +27,31 @@ namespace Smart_Lamp_Controller
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Server=KEONDRAE8AA2\\SQLEXPRESS; Database=smart_lamp; Integrated Security=True;");
-            con.Open();
-            DataTable ds = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT ID, IP, Name, Type FROM Devices", con);
-            adapter.Fill(ds);
-            foreach (DataRow row in ds.Rows)
+            try
             {
-                ListViewItem item = new ListViewItem(row["Name"].ToString());
-                item.SubItems.Add(row["ID"].ToString());
-                item.SubItems.Add(row["IP"].ToString());
-                item.SubItems.Add(row["Type"].ToString());
-                listofDevices.Items.Add(item);
-            }
+                SqlConnection con =
+                    new SqlConnection(
+                        "Server=KEONDRAE-ORYX; Database=smart_lamp; Integrated Security=True;");
+                con.Open();
+                DataTable ds = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT ID, IP, Name, Type FROM Devices", con);
+                adapter.Fill(ds);
+                foreach (DataRow row in ds.Rows)
+                {
+                    ListViewItem item = new ListViewItem(row["Name"].ToString());
+                    item.SubItems.Add(row["ID"].ToString());
+                    item.SubItems.Add(row["IP"].ToString());
+                    item.SubItems.Add(row["Type"].ToString());
+                    listofDevices.Items.Add(item);
+                }
 
-            listofDevices.View = View.List;
+                listofDevices.View = View.List;
+            }
+            catch (SystemException)
+            {
+                MessageBox.Show("Could not Find Database!");
+            }
+            
         }
 
         private void listofDevices_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,7 +62,7 @@ namespace Smart_Lamp_Controller
                 message += "ID: " + listofDevices.SelectedItems[0].SubItems[1].Text + Environment.NewLine;
                 message += "IP: " + listofDevices.SelectedItems[0].SubItems[2].Text + Environment.NewLine;
                 //MessageBox.Show(message);
-                Devices device = new Devices(Convert.ToInt32(listofDevices.SelectedItems[0].SubItems[1].Text), listofDevices.SelectedItems[0].SubItems[2].Text, listofDevices.SelectedItems[0].SubItems[0].Text, listofDevices.SelectedItems[0].SubItems[3].Text);
+                Devices device = new Devices(listofDevices.SelectedItems[0].SubItems[2].Text, listofDevices.SelectedItems[0].SubItems[0].Text, listofDevices.SelectedItems[0].SubItems[3].Text);
                 Device_Interaction di = new Device_Interaction(device);
                 di.Show();
             }

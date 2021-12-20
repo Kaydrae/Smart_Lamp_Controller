@@ -7,11 +7,10 @@ namespace Smart_Lamp_Controller
 {
     public class Database
     {
-        private string _connection = "Server=KEONDRAE8AA2\\SQLEXPRESS; Database=smart_lamp; Integrated Security=True;";
+        private static string _connection = "Server=KEONDRAE-ORYX; Database=smart_lamp; Integrated Security=True;";
 
-        private SqlConnection con;
-        // 2 Tables Devices and Device_Activity
-        public bool Database_Check()
+        private static SqlConnection con;
+        public static bool Database_Check()
         {
             try
             {
@@ -26,21 +25,22 @@ namespace Smart_Lamp_Controller
             }
         }
 
-        public void Insert(Devices device, string table)
+        public static int Insert(Devices device, string table)
         {
             if (Database_Check())
             {
-                
-            }
-            
-        }
 
-        public void Insert(string deviceId, string url, string table)
-        {
-            if (Database_Check())
-            {
+                string sql = "INSERT INTO " + table + " (IP, Name, Type) VALUES (@ip, @name, @type)";
+
+                SqlCommand command = new SqlCommand(sql, con);
+                command.Parameters.AddWithValue("@ip", device.Ip);
+                command.Parameters.AddWithValue("@name", device.Name);
+                command.Parameters.AddWithValue("@type", device.Type);
+                return command.ExecuteNonQuery();
                 
             }
+
+            return -300;
         }
 
         public void Update(Devices device)
